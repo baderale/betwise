@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { prompt } from 'inquirer';
+import inquirer from 'inquirer';
 import { BetSlipParser } from './data/parser';
 import { SportradarClient } from './data/sportradar';
 import { ChatController } from './chat/controller';
@@ -21,12 +21,12 @@ async function main() {
     .command('analyze')
     .description('Analyze a FanDuel bet slip')
     .action(async () => {
-      const { betSlip } = await prompt([
+      const { betSlip } = await inquirer.prompt([
         {
           type: 'input',
           name: 'betSlip',
           message: 'Paste your FanDuel bet slip:',
-          validate: (input) => input.length > 0
+          validate: (input: string) => input.length > 0
         }
       ]);
 
@@ -60,7 +60,7 @@ async function startQASession(
   sessionManager: SessionManager
 ) {
   while (true) {
-    const { question } = await prompt([
+    const { question } = await inquirer.prompt([
       {
         type: 'input',
         name: 'question',
