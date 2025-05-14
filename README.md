@@ -32,3 +32,6 @@ Betwise is an AI-powered assistant for FanDuel users who want to validate their 
 ├── /data → Sportradar integration  
 ├── /session → Local memory for session state  
 ├── index.ts → Entry point (CLI interface)
+
+## 🔒 Disclaimer
+Betwise does not give betting advice or predictions. It provides **stat-based context** to help you think critically about your choices.
